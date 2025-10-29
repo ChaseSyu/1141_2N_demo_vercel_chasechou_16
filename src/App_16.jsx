@@ -5,6 +5,7 @@ import {
   HomePage_16,
   BlogStaticPage_16,
   BlogLocalJsonPage_16,
+  BlogLocalJsonPage2_16,
   BlogNodePage_16,
   BookListPage_16,
   BlogSupaPage_16,
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: 'localJson_16',
         element: <BlogLocalJsonPage_16 />,
+      },
+      {
+        path: 'localJson2_16',
+        element: <BlogLocalJsonPage2_16 />,
       },
       {
         path: 'node_16',

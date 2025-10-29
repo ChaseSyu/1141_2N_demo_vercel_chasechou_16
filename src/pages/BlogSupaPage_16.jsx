@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Blog_16 from '../components/Blog_16.jsx';
+import Wrapper from '../assets/wrappers/Blog2_16';
 // import blogData_16 from '../assets/data/blogData.json';
 
 // const api_url = 'http://localhost:5000/api/blogs_16';
@@ -28,7 +29,7 @@ const BlogSupaPage_16 = () => {
   }, []);
 
   return (
-    <>
+    <Wrapper>
       <section className='blogs'>
         <div className='section-title'>
           <h2>
@@ -51,7 +52,7 @@ const BlogSupaPage_16 = () => {
           })}
         </div>
       </section>
-    </>
+    </Wrapper>
   );
 };
 

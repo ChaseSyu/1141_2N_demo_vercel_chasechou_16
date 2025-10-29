@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Wrapper from '../assets/wrappers/Navbar_16';
 import { Link } from 'react-router-dom';
 
 const Navbar_16 = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <Wrapper>
       <header className='header'>
@@ -127,7 +132,10 @@ const Navbar_16 = () => {
                       <Link to='/node_16'>W4-BlogNode_16</Link>
                     </li>
                     <li className='menu-item'>
-                      <Link to='#'>W5-BlogSupa_16</Link>
+                      <Link to='/supa_16'>W5-BlogSupa_16</Link>
+                    </li>
+                    <li className='menu-item'>
+                      <Link to='/localJson2_16'>W7-BlogLocalJson2_16</Link>
                     </li>
                   </ul>
                 </div>
@@ -155,6 +163,7 @@ const Navbar_16 = () => {
             </ul>
             <Link
               to='#'
+              onClick={toggleMenu}
               id='hamburger-icon'
               className='mobile-toggler'
               aria-label='Mobile Menu'
@@ -164,10 +173,17 @@ const Navbar_16 = () => {
           </div>
 
           {/* <!-- Mobile menu --> */}
-          <div id='mobile-menu' className='mobile-menu hidden slideInDown'>
+          <div
+            id='mobile-menu'
+            className={
+              isMobileMenuOpen
+                ? 'mobile-menu slideInDown'
+                : 'mobile-menu hidden slideInDown'
+            }
+          >
             <ul>
               <li className='menu-item'>
-                <Link to='#' className='active'>
+                <Link to='/' className='active'>
                   Home
                 </Link>
               </li>
@@ -259,26 +275,46 @@ const Navbar_16 = () => {
               </li>
 
               <li className='menu-item dropdown'>
-                <Link to='#'>Services +</Link>
-                <div className='sub-menu-wrapper'>
+                <Link to='#'>Demo +</Link>
+                <div className='sub-menu-wrapper slideInUp'>
                   <ul className='sub-menu'>
                     <li className='menu-item'>
-                      <Link to='#'>Service 1</Link>
+                      <Link to='/booklist_16'>W2-BookList_16</Link>
                     </li>
                     <li className='menu-item'>
-                      <Link to='#'>Service 2</Link>
+                      <Link to='/static_16'>W3-BlogStatic_16</Link>
                     </li>
                     <li className='menu-item'>
-                      <Link to='#'>Service 3</Link>
+                      <Link to='/localJson_16'>W3-BlogLocalJson_16</Link>
                     </li>
                     <li className='menu-item'>
-                      <Link to='#'>Service 4</Link>
+                      <Link to='/node_16'>W4-BlogNode_16</Link>
+                    </li>
+                    <li className='menu-item'>
+                      <Link to='/supa_16'>W5-BlogSupa_16</Link>
+                    </li>
+                    <li className='menu-item'>
+                      <Link to='/localJson2_16'>W7-BlogLocalJson2_16</Link>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li className='menu-item'>
-                <Link to='#'>Blog</Link>
+              <li className='menu-item dropdown'>
+                <Link to='#'>TUTORIALS +</Link>
+                <div className='sub-menu-wrapper slideInUp'>
+                  <ul className='sub-menu'>
+                    <li className='menu-item'>
+                      <Link to='/tutorials/t11_16'>
+                        T11_ErrorExamplePage_16
+                      </Link>
+                    </li>
+                    <li className='menu-item'>
+                      <Link to='/tutorials/t12_16'>
+                        T12_UseStateBasicsPage_16
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className='menu-item'>
                 <Link to='#'>Contact</Link>

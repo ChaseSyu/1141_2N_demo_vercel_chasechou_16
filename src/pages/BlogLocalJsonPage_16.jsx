@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import Blog_16 from '../components/Blog_16';
 import blogData_16 from '../assets/data/blogData.json';
+import Wrapper from '../assets/wrappers/Blog2_16';
 
 const BlogLocalJsonPage_16 = () => {
   const [name, setName] = useState('ChaseChou');
   const [id, setId] = useState('213417016');
   const [blogs_16, setBlogs] = useState(blogData_16);
   return (
-    <>
+    <Wrapper>
       <section className='blogs'>
         <div className='section-title'>
           <h2>
-            static blogs -- {name}, {id}
+            Blogs From Local Json -- {name}, {id}
           </h2>
         </div>
         <div className='blogs-center'>
@@ -30,7 +31,7 @@ const BlogLocalJsonPage_16 = () => {
           })}
         </div>
       </section>
-    </>
+    </Wrapper>
   );
 };
 
